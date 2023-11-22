@@ -37,11 +37,12 @@ RSpec.describe "Profiles", type: :request do
   describe "PATCH /update" do
     it "updates the profile and redirects" do
       profile = create(:profile, user: user)
-      patch profile_path(profile), params: { profile: { field1: "New Value" } }
-      expect(response).to redirect_to(some_path)
+      patch profile_path(profile), params: { profile: { education_level: "New Education Level", job_preference: "New Job preference", additional_info: "new additional info" } }
+      expect(response).to redirect_to(profile_path(profile))
       profile.reload
-      expect(profile.field1).to eq("New Value")
+      expect(profile.education_level).to eq("New Education Level")
     end
   end
+
 
 end
