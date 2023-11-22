@@ -1,0 +1,14 @@
+<%= simple_form_for @profile do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :education_level %>
+    <%= f.input :job_preference %>
+    <%= f.input :additional_info %>
+    <!-- Add other fields as necessary -->
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
