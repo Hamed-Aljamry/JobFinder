@@ -5,3 +5,6 @@
 <p><strong>Education level:</strong> <%= @profile.education_level %></p>
 <p><strong>Job preference:</strong> <%= @profile.job_preference %></p>
 <p><strong>Additional Information:</strong> <%= @profile.additional_info %></p>
+
+
+<%= link_to "Edit Profile", edit_profile_path(@profile) %>
