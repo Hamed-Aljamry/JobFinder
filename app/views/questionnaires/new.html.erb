@@ -1,9 +1,15 @@
-<%= simple_form_for([@user, @questionnaire]) do |f| %>
-  <%= f.input :industry, collection: ['Technology', 'Healthcare', 'Finance'], as: :radio_buttons %>
-  <%= f.input :role, collection: ['Management', 'Technical', 'Creative'], as: :radio_buttons %>
-  <%= f.input :company_size, collection: ['Startup', 'Mid-sized', 'Large Corporation'], as: :radio_buttons %>
-  <%= f.input :work_location, collection: ['Remote', 'On-site', 'Hybrid'], as: :radio_buttons %>
-  <%= f.input :salary_range, collection: ['<$50,000', '$50,000 - $100,000', '>$100,000'], as: :radio_buttons %>
 
+
+<%= simple_form_for([@user, @questionnaire]) do |f| %>
+<h3>What type of industry are you looking for?</h3>
+  <p><%= f.input :industry, collection: @industry, as: :radio_buttons %></p>
+  <h3>What type of role are you looking for?</h3>
+  <p><%= f.input :role, collection: @role, as: :radio_buttons %></p>
+  <h3>What type of company are you looking for?</h3>
+  <p><%= f.input :company_size, collection: @company_size, as: :radio_buttons %></p>
+  <h3>Where are you looking to work?</h3>
+  <p><%= f.input :work_location, collection: @work_location, as: :radio_buttons %></p>
+  <h3>What's your salary range</h3>
+  <p><%= f.input :salary_range, collection: @salary_range, as: :radio_buttons %></p>
   <%= f.button :submit, "Submit" %>
 <% end %>
