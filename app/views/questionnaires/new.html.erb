@@ -1,8 +1,8 @@
-<%= simple_form_for @questionnaire do |f| %>
+<%= simple_form_for ([@user, @questionnaire]) do |f| %>
   <% @questions.each do |question| %>
     <div>
-      <%= f.label question.text %>
-      <%= f.collection_radio_buttons :response, question.options, :to_s, :to_s %>
+      <%= f.label question[:text] %>
+      <%= f.collection_radio_buttons :response, question[:options], :to_s, :to_s %>
     </div>
   <% end %>
   <%= f.button :submit %>
